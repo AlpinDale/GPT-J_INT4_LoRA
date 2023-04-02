@@ -1,5 +1,9 @@
 # GPT-J Lora 4bit
-Made some adjust for the code in peft and gptq for llama, and make it possible for lora finetuning with a 4 bits base model. The same adjustment can be made for 2, 3 and 8 bits.
+Forked from [johnsmith0031/alpaca_lora_4bit](https://github.com/johnsmith0031/alpaca_lora_4bit)
+
+Code for training a LoRA for the GPT-J model (and its variants) with 4-bit integer support. Should cut down the VRAM required by a considerable amount.
+
+Still untested.
 
 # Requirements
 gptq-for-llama <br>
