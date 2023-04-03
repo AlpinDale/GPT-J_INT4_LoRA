@@ -1,4 +1,4 @@
-from transformers.models.gptj.modeling_gptj import GPTJBlock
+from transformers.models.gptj.modeling_gptj import GPTJModel
 from torch.utils.checkpoint import checkpoint
 from torch.autograd import Variable
 import torch
@@ -44,7 +44,7 @@ def apply_gradient_checkpointing(model, checkpoint_ratio=1):
     new_forwards = []
     modules = []
     for n, m in model.named_modules():
-        if isinstance(m, GPTJBlock):
+        if isinstance(m, GPTJModel):
             modules.append(m)
     if checkpoint_ratio < 1 and checkpoint_ratio > 0:
         checkpoint_locs = np.array((np.linspace(0, 1, int(len(modules) * checkpoint_ratio)) * (len(modules)-1)).round(), dtype=int)
